@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get 'pages/about'
   # get 'pages/contact'
   # get 'seller' => "toys#seller"
-  # get 'sales' => "orders#sales"
+  get 'sales' => "orders#sales"
   # get 'purchases' => "orders#purchases"
 
   root 'toys#index'

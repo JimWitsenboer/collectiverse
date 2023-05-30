@@ -14,9 +14,9 @@
       <div class=“thumbnail”>
         <div class=“caption”>
           <h3><%= toy.name %> </h3>
-          <p><%= toy.description %> <p>
           <p><%= number_to_currency(toy.price) %> </p>
           <p> <%= "Sold by: #{toy.user.first_name}"%> </p>
+            <%= link_to 'Show', toy_path(toy), class: "btn btn-link" %>
           <% if (user_signed_in?) && (current_user == toy.user) %>
             <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
             <%= link_to 'Destroy', toy, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-link" %>
