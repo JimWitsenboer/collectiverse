@@ -8,25 +8,21 @@
 </div>
 
 <div class="container">
-<div class="row">
+<div class="cards">
   <% @toys.each do |toy| %>
-    <%= link_to toy_path(toy) do  %>
       <div class="card mb-3 mx-auto card-min-height" style="width: 18rem;">
-        <div class=“thumbnail”>
-          <div class=“caption”>
-            <p> <%= cl_image_tag toy.photo.key, height: "200px", width: "200px"%> </p>
+        <%= link_to toy_path(toy) do  %>
+            <p> <%= cl_image_tag toy.photo.key, height: "300px", width: "200px", class: "card-img-top", crop: "fill" %> </p>
             <h3><%= toy.name %> </h3>
             <p><%= toy.description %> <p>
             <p><%= number_to_currency(toy.price) %> </p>
             <p> <%= "Sold by: #{toy.user.first_name}"%> </p>
-            <% if (user_signed_in?) && (current_user == toy.user) %>
-              <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
-              <%= link_to 'Destroy', toy, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-link" %>
             <% end %>
-          </div>
-        </div>
+            <% if (user_signed_in?) && (current_user == toy.user) %>
+              <%= button_to "delete", toy, method: :delete, data: { turbo_confirm: "Sure?" }, class: "btn btn-link" %>
+              <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
+            <% end %>
       </div>
-      <% end %>
   <% end %>
   </div>
 </div>
