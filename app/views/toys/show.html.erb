@@ -4,8 +4,8 @@
       <h3>Name: <%= @toy.name %> </h3>
       <p>Price: <%= number_to_currency(@toy.price) %> </p>
       <p>Description: <%= @toy.description %> </p>
-      <%= cl_image_tag @toy.photo.key %>
-      <%= link_to "Buy it now", new_toy_order_path(@toy), class: "btn btn-primary", data: { no_turbolink: true} %>
+      <p><%= cl_image_tag @toy.photo.key, height: "600px", width: "400px", crop: "fill" %></p>
+      <p><%= link_to "Buy it now", new_toy_order_path(@toy), class: "btn btn-primary", data: { no_turbolink: true} %></p>
     </div>
 
   </div>
