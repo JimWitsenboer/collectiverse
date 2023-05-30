@@ -78,4 +78,4 @@ end
 
 gem "devise"
 
-gem "autoprefixer-rails"
+gem "cloudinary"
