@@ -4,13 +4,12 @@ class OrdersController < ApplicationController
 
   # Sales
   def sales
-    @orders = Order.all.where(@toy.id == current_user) #how to set this?
-    return @orders #add sorting on status pending
+    @orders = Order.joins(:toy).where(toys: { user: current_user }) #how to set this?
   end
 
   # Purchases
   def purchases
-    @orders = Order.all.where(user_id: current_user)
+    @orders = Order.where(user_id: current_user.id)
   end
 
   # GET /orders/new
