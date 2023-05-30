@@ -12,7 +12,7 @@
   <div class="d-inline">
   <% if current_user == @toy.user%>
     <%= link_to "Edit", edit_toy_path(@toy), class: "btn btn-link" %>
-    <%= button_to "Delete", @toy, method: :delete, class: "btn btn-link" %>
+    <%= button_to "Delete", @toy, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-link"%>
   <% end %>
   <%= link_to "Back", toys_path, class: "btn btn-link" %>
 </div>
