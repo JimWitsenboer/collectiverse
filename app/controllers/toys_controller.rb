@@ -28,7 +28,6 @@ class ToysController < ApplicationController
   def create
     @toy = Toy.new(toy_params)
     @toy.user_id = current_user.id
-
     if @toy.save
       redirect_to toy_path(@toy)
     else
@@ -43,6 +42,7 @@ class ToysController < ApplicationController
   def destroy
     @toy = Toy.find(params[:id])
     @toy.destroy
+    redirect_to toys_path
     # redirect_to toy_path(specify), status: :see_other
   end
 
@@ -54,7 +54,7 @@ class ToysController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def toy_params
-    params.require(:toy).permit(:name, :description, :price, :image)
+    params.require(:toy).permit(:name, :description, :price, :photo)
   end
 
   def check_user
