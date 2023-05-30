@@ -7,4 +7,5 @@ class Order < ApplicationRecord
   belongs_to :toy
   # belongs_to :seller, class_name: "User", through: :toy
   belongs_to :user
+  ORDER_STATUS = ["Pending", "Approved", "Declined"]
 end
