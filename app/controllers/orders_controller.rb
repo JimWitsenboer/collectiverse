@@ -3,13 +3,14 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   # Sales
-  # def sales
-  #   @orders = Order.all.where(seller: current_user)
-  # end
+  def sales
+    @orders = Order.all.where(@toy.id == current_user) #how to set this?
+    return @orders #add sorting on status pending
+  end
 
   # Purchases
   def purchases
-    @orders = Order.all.where(buyer: current_user)
+    @orders = Order.all.where(user_id: current_user)
   end
 
   # GET /orders/new
@@ -23,9 +24,10 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @toy = Toy.find(params[:toy_id])
     @order.toy_id = @toy.id
-    @order.buyer_id = current_user.id
+    @order.user_id = current_user.id
+    @order.status = "pending"
 
-    if @toy.save
+    if @order.save
       redirect_to toy_path(@toy)
     else
       render :new, status: :unprocessable_entity
@@ -40,6 +42,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:address, :city, :state)
+      params.require(:order).permit(:address, :state, :country)
     end
 end
