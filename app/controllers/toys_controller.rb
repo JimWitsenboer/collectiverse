@@ -43,7 +43,6 @@ class ToysController < ApplicationController
     @toy = Toy.find(params[:id])
     @toy.destroy
     redirect_to toys_path
-    # redirect_to toy_path(specify), status: :see_other
   end
 
   private
