@@ -23,7 +23,9 @@
 
 .navbar {
   box-sizing:border-box;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
   line-height: 60px;
   margin: 0;
