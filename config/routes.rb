@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :toys do
     resources :orders, only: [:new, :create]
   end
+  resources :orders, only: [:update]
   # get 'pages/about'
   # get 'pages/contact'
   # get 'seller' => "toys#seller"

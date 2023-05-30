@@ -9,14 +9,19 @@
                 <th class="center">Price</th>
                 <th class="center">Customer</th>
                 <th class="center">Date sold</th>
+                <th class="center">Status</th>
             </tr>
 
             <% @orders.each do |order| %>
             <tr>
+                <td>Image</td>
                 <td><%= order.toy.name %></td>
                 <td><%= number_to_currency(order.toy.price) %></td>
                 <td><%= order.toy.user.first_name %></td>
                 <td><%= order.created_at.strftime("%B %-d, %Y") %></td>
+                <td><%= order.status %></td>
+                <td><%= link_to "accept", order_path(order.id, status: "completed"), data: {turbo_method: :patch}%></td>
+                <td><%= link_to "declind", order_path(order.id, status: "declined"), data: {turbo_method: :patch}%></td>
             </tr>
             <% end %>
         </table>
