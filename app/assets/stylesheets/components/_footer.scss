@@ -1,0 +1,28 @@
+// footer
+
+.footer {
+  width: 100%;
+  background-color: $creme;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 100px;
+
+  position: sticky;
+  bottom: 0;
+}
+.footer-text {
+  margin: 0px;
+}
+
+.footer-links {
+  display: flex;
+  color: $orange;
+  text-align: center;
+  margin:auto auto;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
