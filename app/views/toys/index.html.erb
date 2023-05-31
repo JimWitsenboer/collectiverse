@@ -1,4 +1,4 @@
-<div class="p-5 mb-4 rounded-3 bg-warning" id="jumbotron">
+<div class="p-5 mb-4 bg-warning" id="jumbotron">
   <div class="container-fluid py-5">
     <h2 class="display-6 fw-bold">Collectiverse</h2>
     <p class="col-md-9 fs-4">Find out what interesting toys your neighbours are selling.</p>
@@ -8,17 +8,17 @@
 </div>
 
 <div class="container">
-<div class="cards">
-  <% @toys.each do |toy| %>
+  <div class="cards">
+    <% @toys.each do |toy| %>
       <div class="card mb-3 mx-auto card-min-height" style="width: 18rem;">
         <%= link_to toy_path(toy) do  %>
             <p> <%= cl_image_tag toy.photo.key, crop: "fill", height: "300px", width: "200px", class: "card-img-top" %> </p>
-              <div class="m-3">
-                <h3><%= toy.name %> </h3>
-                <p><%= toy.description %> <p>
-                <p><%= number_to_currency(toy.price) %> </p>
-                <p> <%= "Sold by: #{toy.user.first_name}"%> </p>
-              </div>
+            <div class="m-3">
+              <h3><%= toy.name %> </h3>
+              <p><%= toy.description %> <p>
+              <p><%= number_to_currency(toy.price) %> </p>
+              <p> <%= "Sold by: #{toy.user.first_name}"%> </p>
+            </div>
         <% end %>
         <% if (user_signed_in?) && (current_user == toy.user) %>
           <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
