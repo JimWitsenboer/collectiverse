@@ -10,7 +10,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto align-items-center">
-        <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", "/", class: "nav-link" %>
           </li>
@@ -20,6 +19,7 @@
           <li class="nav-item">
             <%= link_to "Contact", "/pages/contact", class: "nav-link" %>
           </li>
+          <% if user_signed_in? %>
           <li class="nav-item dropdown mr-4">
             <%= image_tag "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
