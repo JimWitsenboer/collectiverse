@@ -1,32 +1,30 @@
-<div class="p-5 mb-4 rounded-3 bg-warning" id="jumbotron">
+<div class="p-5 mb-4 bg-warning" id="jumbotron">
   <div class="container-fluid py-5">
     <h2 class="display-6 fw-bold">Collectiverse</h2>
     <p class="col-md-9 fs-4">Find out what interesting toys your neighbours are selling.</p>
-    <%= link_to 'Sell you toy!', new_toy_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to 'Sell your toy!', new_toy_path, class: "btn btn-primary btn-lg" %>
     <%= link_to 'Buy new toy!', toys_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 
 <div class="container">
-<div class="row">
-  <% @toys.each do |toy| %>
-    <%= link_to toy_path(toy) do  %>
-      <div class="col-md-3 ">
-        <div class=“thumbnail”>
-          <div class=“caption”>
-            <p> <%= cl_image_tag toy.photo.key, height: 300, width: 400%> </p>
-            <h3><%= toy.name %> </h3>
-            <p><%= toy.description %> <p>
-            <p><%= number_to_currency(toy.price) %> </p>
-            <p> <%= "Sold by: #{toy.user.first_name}"%> </p>
-            <% if (user_signed_in?) && (current_user == toy.user) %>
-              <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
-              <%= link_to 'Destroy', toy, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-link" %>
-            <% end %>
-          </div>
-        </div>
+  <div class="cards">
+    <% @toys.each do |toy| %>
+      <div class="card mb-3 mx-auto card-min-height" style="width: 18rem;">
+        <%= link_to toy_path(toy) do  %>
+            <p> <%= cl_image_tag toy.photo.key, height: "300px", width: "200px", class: "card-img-top" %> </p>
+            <div class="m-3">
+              <h3><%= toy.name %> </h3>
+              <p><%= toy.description %> <p>
+              <p><%= number_to_currency(toy.price) %> </p>
+              <p> <%= "Sold by: #{toy.user.first_name}"%> </p>
+            </div>
+        <% end %>
+        <% if (user_signed_in?) && (current_user == toy.user) %>
+          <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
+          <%= button_to "delete", toy, method: :delete, data: { turbo_confirm: "Sure?" }, class: "btn btn-link" %>
+        <% end %>
       </div>
-      <% end %>
   <% end %>
   </div>
 </div>

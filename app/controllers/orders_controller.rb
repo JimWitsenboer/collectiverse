@@ -33,6 +33,13 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    order = Order.find(params[:id])
+    order.status = params[:status]
+    order.save
+    redirect_to sales_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
