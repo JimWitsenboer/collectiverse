@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container mt-5">
     <div class="row center">
         <h2>Your sales history</h2>
 
@@ -10,26 +10,37 @@
                 <th class="center">Customer</th>
                 <th class="center">Date sold</th>
                 <th class="center">Status</th>
+                <th class="center">Reponse</th>
             </tr>
 
             <% @orders.each do |order| %>
             <tr>
-                <td>Image</td>
+                <td><%= cl_image_tag order.toy.photo.key, height: "150px", width: "100px", crop: "fill" %></td>
                 <td><%= order.toy.name %></td>
                 <td><%= number_to_currency(order.toy.price) %></td>
                 <td><%= order.toy.user.first_name %></td>
                 <td><%= order.created_at.strftime("%B %-d, %Y") %></td>
                 <td><%= order.status %></td>
-                <td><%= link_to "accept", order_path(order.id, status: "completed"), data: {turbo_method: :patch}%></td>
-                <td><%= link_to "declind", order_path(order.id, status: "declined"), data: {turbo_method: :patch}%></td>
+                <td>
+                  <% if :status == "pending" %>
+                    <%= link_to order_path(order.id, status: "declined"), class: "d-inline", data: {turbo_method: :patch} do %>
+                      <i class="fa-solid fa-circle-xmark" style="color: #d31212; font-size: 18px;"></i>
+                    <% end %>
+                    <%= link_to order_path(order.id, status: "completed"), class: "d-inline", data: {turbo_method: :patch} do %>
+                      <i class="fa-solid fa-circle-check" style="color: #238b5e; font-size: 18px;"></i>
+                    <% end %>
+                  <% else %>
+                    You already changed the status
+                  <% end %>
+                </td>
             </tr>
             <% end %>
         </table>
     </div>
+
+  <br>
+
+  <% if user_signed_in? %>
+    <%= link_to "New listing", new_toy_path %>
+  <% end %>
 </div>
-
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to "New listing", new_toy_path %>
-<% end %>
