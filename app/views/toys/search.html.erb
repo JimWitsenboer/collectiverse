@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="cards">
+    <% @toys.each do |toy| %>
+      <div class="card mb-3 mx-auto card-min-height" style="width: 18rem;">
+        <%= link_to toy_path(toy) do  %>
+            <p> <%= cl_image_tag toy.photo.key, height: "300px", width: "200px", class: "card-img-top" %> </p>
+            <div class="m-3">
+              <h3><%= toy.name %> </h3>
+              <p><%= toy.description %> <p>
+              <p><%= number_to_currency(toy.price) %> </p>
+              <p> <%= "Sold by: #{toy.user.username}"%> </p>
+            </div>
+        <% end %>
+        <% if (user_signed_in?) && (current_user == toy.user) %>
+          <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
+          <%= button_to "delete", toy, method: :delete, data: { turbo_confirm: "Sure?" }, class: "btn btn-link" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

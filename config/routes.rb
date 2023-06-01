@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :toys do
+    collection do
+      get 'search'
+    end
     resources :orders, only: [:new, :create]
   end
+
   resources :orders, only: [:update]
   get 'pages/about'
   get 'pages/contact'
