@@ -1,0 +1,38 @@
+.index-banner {
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner-text{
+  color: white;
+  font-size: 144px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 10px;
+  margin: 0;
+}
+
+.button-banner-index{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Geologica', sans-serif;
+}
+
+.button-container{
+  width: 460px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-banner-index{
+  width: 185px;
+  height: 65px;
+}
