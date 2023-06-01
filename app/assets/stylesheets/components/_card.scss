@@ -33,6 +33,7 @@ a {
 }
 
 .toy-price {
+  display: flex;
   height: 30px;
   font-weight: 700;
   font-size: 28px;
@@ -41,11 +42,23 @@ a {
   margin-bottom: 8px;
 }
 
+.toy-price span{
+  margin-top: 5px;
+  font-weight: 500;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
 .toy-seller {
   height: 24px;
   font-weight: 400;
   overflow: hidden;
   margin-bottom: 8px;
+}
+
+.toy-seller span{
+  margin-left: 5px;
+  font-size: 18 px;
 }
 
 // Smallest device
