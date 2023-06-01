@@ -3,6 +3,8 @@ class Toy < ApplicationRecord
   # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_one_attached :photo
 
+  searchkick
+
   validates :name, :description, :price, presence: true
   validates :price, numericality: {greater_than: 0}
   # validate presence of attachment, something like this: 'validates_attachment_presence :image'
