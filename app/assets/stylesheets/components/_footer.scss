@@ -1,32 +1,58 @@
-// footer
-
 .footer {
   width: 100%;
   background-color: $yellow;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  align-content: center;
   height: 80px;
-
-  position: flexible;
   bottom: 0;
 }
+
 .footer-text {
-  margin: 0px;
+  margin-left: 30px;
+  margin-bottom: 0;
+  font-family: 'Geologica', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
 .footer-links {
   display: flex;
-  color: $orange;
+  color: black;
   text-align: center;
-  margin:auto auto;
+  margin-right: 30px;
 }
 
 .footer-links a:hover {
   opacity: 1;
 }
 
-.fa-heart {
-  color: pink;
+.footer p {
+  display: flex;
+  align-items: center;
+}
+
+.button-footer-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98px;
+  height: 42px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background-color: black;
+  border-color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 2s;
+}
+
+.button-footer-link:hover {
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  border-color: black;
+  transition-duration: 2s;
 }
