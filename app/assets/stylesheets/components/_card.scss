@@ -39,7 +39,7 @@ a {
   font-size: 28px;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .toy-price span{
@@ -110,51 +110,3 @@ a {
     height: 70px;
   }
 }
-
-// probably need card content dont change below
-
-// .card__content {
-//   color: white;
-//   text-align: center;
-//   overflow: hidden;
-// }
-
-// .card__content__text {
-//   background-color: rgb(25,25,25);
-//   height: 200px;
-//   width: 400px;
-//   z-index: 7;
-//   margin-top: 0;
-//   overflow: hidden;
-// }
-
-// .card__content__text h4 {
-//   margin: 0;
-//   padding: 25px;
-//   font-family: 'Wix Madefor Display', sans-serif;
-//   font-size: 35px;
-//   letter-spacing: 3px;
-//   z-index: 7;
-// }
-
-// .card__content__text p {
-//   margin: 0 auto;
-//   font-family: 'Work Sans', sans-serif;
-//   width: 300px;
-//   font-size: 20px;
-//   letter-spacing: 2px;
-// }
-
-// .card__content:hover img,
-// .card__content:focus img {
-//   transform: scale(1.05);
-//   -webkit-transition-duration: 500ms;
-//   transition-duration: 500ms;
-// }
-
-// .card__content:hover,
-// .card__content:focus {
-//   -webkit-transition-duration: 500ms;
-//   transition-duration: 500ms;
-//   box-shadow: 0 0 8px rgb(170,93,29);
-// }
