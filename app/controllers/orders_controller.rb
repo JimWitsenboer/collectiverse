@@ -2,9 +2,18 @@ class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
+  # All sales in a list
+  # Only the pending sales on the map
   # Sales
   def sales
     @orders = Order.joins(:toy).where(toys: { user: current_user }) #how to set this?
+    @pending_sales = @orders.where(status: "pending")
+    @markers = @pending_sales.geocoded.map do |order|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   # Purchases
