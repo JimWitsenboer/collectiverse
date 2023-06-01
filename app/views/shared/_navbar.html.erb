@@ -1,28 +1,28 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-main">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand left-side-navbar" do %>
       <%= image_tag "logo.png" %><span class="logo-text">COLLECTIVERSE</span>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+<%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button> %>
+<%# jim what is this? %>
+  <div class="right-side-navbar">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto align-items-center">
-       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-        <%= form_tag search_toys_path, method: :get, class: "navbar-form navbar-left" do %>
-          <p>
-            <%= text_field_tag :search, params[:search], class: "form-control"  %>
-            <%= submit_tag "Search", name: nil, class: "btn btn-outline-success" %>
-          </p>
+
+<%# <form class="d-flex" role="search">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form> %>
+<%# is this useless? %>
+
+        <%= form_tag search_toys_path, method: :get, class: "navbar-form" do %>
+              <p> <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <%= text_field_tag :search, params[:search], class: "form-control" %> </p>
         <% end %>
-          <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link" %>
-          </li>
+
           <li class="nav-item">
             <%= link_to "About", "/pages/about", class: "nav-link" %>
           </li>
@@ -47,6 +47,8 @@
           </li>
         <% end %>
       </ul>
+
     </div>
+  </div>
   </div>
 </div>
