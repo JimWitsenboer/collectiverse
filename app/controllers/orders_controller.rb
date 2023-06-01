@@ -7,11 +7,13 @@ class OrdersController < ApplicationController
   # Sales
   def sales
     @orders = Order.joins(:toy).where(toys: { user: current_user }) #how to set this?
-    @pending_sales = @orders.where(status: "pending")
+    @pending_sales = @orders.where(status: "pending").or(@orders.where(status: "approved"))
     @markers = @pending_sales.geocoded.map do |order|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: order.latitude,
+        lng: order.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { order: order }),
+        marker_html: render_to_string(partial: "marker", locals: {order: order})
       }
     end
   end
