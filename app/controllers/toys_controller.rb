@@ -3,14 +3,19 @@ class ToysController < ApplicationController
   before_action :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
-  #seller page
-  # def seller
-  #   @toys = Toy.where(user: current_user)
-  # end
 
   # GET /toys
   def index
     @toys = Toy.all
+  end
+
+  def search
+    if params[:search].present?
+      @toys = Toy.search(params[:search])
+    else
+      @toys = Toy.all # or to index
+    end
+    render :index
   end
 
   # GET /toys/1
