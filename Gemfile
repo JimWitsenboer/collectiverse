@@ -79,5 +79,10 @@ end
 gem "devise"
 
 gem "cloudinary"
+<<<<<<< HEAD
+
+gem "geocoder"
+=======
 gem "opensearch-ruby"
 gem "searchkick"
+>>>>>>> 965459bf6b0964130ea8f408e84009411f2509dc

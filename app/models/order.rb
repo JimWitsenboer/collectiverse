@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   validates :address, :state, :country, presence: true
   # validates :card_number, presence: true, numericality: { only_integer: true }
   # validates :exp_month, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 12 }
