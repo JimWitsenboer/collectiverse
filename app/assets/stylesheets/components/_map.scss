@@ -1,0 +1,14 @@
+// le Wagon styling so change!
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  color: $orange;
+}
+
+.mapboxgl-marker > svg > path {
+  fill: pink;
+}
