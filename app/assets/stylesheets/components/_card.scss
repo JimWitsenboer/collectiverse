@@ -1,68 +1,5 @@
-.card-img-top {
-  object-fit: cover;
-  height: 300px;
-}
-//for img dont remove
-
-.toy-name {
-  height: 70px;
-  overflow: hidden;
-}
-
-.toy-desc {
-  height: 120px;
-  overflow: hidden;
-  margin-bottom: 8;
-}
-
-.toy-price {
-  height: 24px;
-  overflow: hidden;
-  margin-bottom: 8;
-}
-
-.toy-seller {
-  height: 24px;
-  overflow: hidden;
-  margin-bottom: 8;
-}
-// .card__image {
-//   width: 300px;
-//   height: 200px;
-//   transform: scale(1.0);
-//   overflow: hidden;
-//   z-index: 6;
-// }
-
-// .card__image img {
-//   width: 400px;
-//   height: 400px;
-//   object-fit: cover;
-//   -webkit-transition-duration: 500ms;
-//   transition-duration: 500ms;
-// }
-
-// .card {
-//   display: flex;
-//   width: 400px;
-//   height: 600px;
-//   border-radius: 3px;
-//   box-shadow: 0 0 5px rgb(167, 166, 166);
-//   border: 1px rgb(72, 68, 68);
-//   background-color: rgb(25,25,25);
-// }
-
-.main-card {
-  background-size:cover;
-  background-position:center;
-  background-color: $creme;
-  font-size: 20px;
-  height: 120px;
-  width: 80px;
-}
-
-.card-min-height {
-  min-height: 600px;
+a {
+  text-decoration: none;
 }
 
 .cards {
@@ -71,51 +8,66 @@
   grid-gap: 16px;
 }
 
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 50px;
-//   justify-content: center;
-//   width: 1300px;
-//   margin: 75px auto;
-// }
-
-a {
-  text-decoration: none;
+.card-height {
+  min-height: 350px;
 }
 
-.cards h3{
+.card-img-top {
+  object-fit: cover;
+  height: 300px;
+}
+
+.card-content {
   color: black;
 }
 
-.cards p{
-  color: black;
+.toy-name {
+  overflow: hidden;
+  margin-bottom: 0;
 }
 
-// .cards__text {
-//   color: white;
-//   margin-top: 0;
-// }
+.toy-desc {
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
 
-// .cards__text h2 {
-//   font-family: 'Wix Madefor Display', sans-serif;
-//   margin-top: 50px;
-//   margin-bottom: 0px;
-//   letter-spacing: 9.8px;
-//   font-size: 65px;
-// }
+.toy-price {
+  display: flex;
+  height: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
 
-// .cards__text p {
-//   font-family: 'Work Sans', sans-serif;
-//   margin: auto;
-//   font-size: 47px;
-//   letter-spacing: 7px;
-// }
+.toy-price span{
+  margin-top: 5px;
+  font-weight: 500;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.toy-seller {
+  height: 24px;
+  font-weight: 400;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.toy-seller span{
+  margin-left: 5px;
+  font-size: 18 px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  .toy-name {
+    height: 60px;
   }
 }
 
@@ -124,12 +76,18 @@ a {
   .cards {
     grid-template-columns: 1fr;
   }
+  .toy-name {
+    height: 60px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
     grid-template-columns: 1fr 1fr;
+  }
+  .toy-name {
+    height: 65px;
   }
 }
 
@@ -138,12 +96,18 @@ a {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .toy-name {
+    height: 65px;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .toy-name {
+    height: 70px;
   }
 }
 
