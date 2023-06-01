@@ -36,3 +36,41 @@
   width: 185px;
   height: 65px;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .banner-text{
+    font-size: 56px;
+  }
+  .button-container{
+    width: 390px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .banner-text{
+    font-size: 72px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .banner-text{
+    font-size: 88px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .banner-text{
+    font-size: 104px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .banner-text{
+    font-size: 120px;
+  }
+}

@@ -16,7 +16,6 @@
           </div>
           <div class="card-content m-3">
             <h3 class="toy-name"><%= toy.name %> </h3>
-            <p class="toy-desc"><%= toy.description %> <p>
             <p class="toy-price"><%= number_to_currency(toy.price) %> </p>
             <p class="toy-seller"> <%= "Sold by: #{toy.user.username}"%> </p>
           </div>
