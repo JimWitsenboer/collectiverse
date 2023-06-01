@@ -15,10 +15,9 @@
             <p> <%= cl_image_tag toy.photo.key, height: "300px", class: "card-img-top" %> </p>
           </div>
           <div class="card-content m-3">
-            <h3 class="toy-name"><%= toy.name %> </h3>
-            <p class="toy-desc"><%= toy.description %> <p>
-            <p class="toy-price"><%= number_to_currency(toy.price) %> </p>
-            <p class="toy-seller"> <%= "Sold by: #{toy.user.username}"%> </p>
+            <h3 class="toy-name"><%= toy.name %></h3>
+            <p class="toy-price"><%= number_to_currency(toy.price) %><span>Incl. shipment</span></p>
+            <p class="toy-seller"><i class="fa-solid fa-shop"></i><span><%= toy.user.username %></span></p>
           </div>
         <% end %>
         <% if (user_signed_in?) && (current_user == toy.user) %>
@@ -29,19 +28,6 @@
   <% end %>
   </div>
 </div>
-
-<%# probably needed dont remove %>
-          <%# <div class="card">
-            <div class="card__content">
-              <div class="card__image">
-                <img src="images/2.png" alt="">
-              </div>
-              <div class="card__content__text">
-                <h4>WAIT FOR IT!</h4>
-                <p>Go have some fun in real life and your families before 17th of June!</p>
-              </div>
-            </div>
-          </div> %>
 
 <br>
 <% if user_signed_in? %>
