@@ -19,7 +19,10 @@ class ToysController < ApplicationController
   end
 
   # GET /toys/1
-  def show; end
+  def show
+    @toy = Toy.find(params[:id])
+    @similar_toys = Toy.similar_toys(@toy)
+  end
 
   # GET /toys/new
   def new

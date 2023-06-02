@@ -1,5 +1,31 @@
-#contact {
-  .banner {
-    color: black;
+
+
+  .contact-form {
+    text-align: left;
+    margin-right: 10px;
+   }
+
+  .email-form {
+    width: 100%;
   }
-}
+
+  .subject-form {
+    width: 588px;
+    height: 200px;
+  }
+
+  .div-content {
+    width:auto;
+    height:400px;
+    display: inline-block;
+  }
+
+  input {
+
+  }
+
+  input::placeholder {
+    text-align: left;
+
+
+  }

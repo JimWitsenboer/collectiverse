@@ -1,36 +1,35 @@
-<div class="d-flex mt-5 mb-5 rounded full-page" id="contact set-margin">
-  <div class="main-div m-0 p-0" style="background-color: $light-gray" >
+<div class="d-flex mt-4 mb-4 rounded" id="set-margin">
+  <div class="main-div m-0 p-0" style="background-color: #f0f3f7;" >
 
     <div class="banner">
-      <div class="contact-section">
-        <h1 class="text-center">Contact Collectiverse</h1>
-        <p class="text-center">If you have a request please fill out the contact form </p>
-        <p class="text-center"> Please keep in mind, that we need our time to answer</p>
-      </div>
+        <h2>Contact Collectiverse</h2>
+        <p class="text-center">If you have a request please fill out the contact form - Please keep in mind, that we need our time to answer </p>
+      <hr class="solid">
+    </div>
       <h2 style="text-align:center">We are happy to help you ⭐️</h2>
 
 
 
-      <div class="div-content">
+      <div class="div-content w-100">
         <form>
-          <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" class="form-control" id="firstName" placeholder="Please tip your first name" required>
+          <div class="contact-form mt-4 mb-4">
+            <label for="firstName"> Your first Name:</label>
+            <input type="text" class="contact-form" id="firstName" required>
+            <label for="lastName">Your last Name:</label>
+            <input type="text" class="contact-form" id="lastName" required>
           </div>
-          <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Please tip your last name" required>
-          </div>
-          <div class="form-group">
+          <div class="email-form mt-4 mb-4 ">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Please tip your email" required>
+            <input type="email" class="email-form" id="email" placeholder="Please type your email" required>
           </div>
-          <div class="form-group">
+          <div class="form-group mt-4 mb-4">
             <label for="subject">Subject:</label>
-            <input type="text" class="form-control" id="subject" placeholder="Please tip your subject" required>
+            <textarea type="text" rows="2" class="form-control" id="subject" maxlength="300" placeholder="Please type your subject"required></textarea>
           </div>
-          <button type="submit" class="btn btn-sm btn-outline-secondary py-2 px-4">SEND</button>
-        </form>
+          <div class="text-center mt-4 mb-4 p-2">
+            <button type="submit" class="btn btn-sm btn-outline-secondary py-2 px-4">SEND</button>
+          </div>
+       </form>
       </div>
     </div>
   </div>
