@@ -39,6 +39,7 @@
 .right-side-navbar {
   display: flex;
   align-items: center;
+  margin-right: 15px;
 }
 
 .search-icon{
@@ -47,4 +48,63 @@
   top: 26px;
   right: 14px;
   color: #CCC;
+}
+
+.nav-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 42px;
+  margin: 0;
+  padding: 0 !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 2s;
+}
+
+.navbar-form{
+  width: 300px;
+  margin-right: 14px;
+}
+
+.nav-menu{
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-login{
+  width: 96px;
+  height: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 1s;
+}
+
+.button-login:hover {
+  color: white;
+  background-color: black;
+  border-color: black;
+  transition-duration: 1s;
+}
+
+.button-new-toy{
+  width: 104px;
+  height: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 1s;
+}
+
+.avatar{
+  margin-left: 18px;
 }
