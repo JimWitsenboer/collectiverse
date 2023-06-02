@@ -89,7 +89,13 @@
   color: white;
   background-color: black;
   font-family: 'Geologica', sans-serif;
-  transition-duration: 1s;
+  transition-duration: 500ms;
+}
+
+.button-login:hover{
+  background-color: rgb(69, 69, 69) !important;
+  color: white !important;
+  transition-duration: 500ms !important;
 }
 
 .button-login:hover {
@@ -113,6 +119,7 @@
 .button-new-toy:hover{
   background-color: rgb(69, 69, 69);
   color: white;
+  transition-duration: 500ms !important;
 }
 
 .avatar{
