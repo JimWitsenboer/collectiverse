@@ -10,5 +10,15 @@
 }
 
 .mapboxgl-marker > svg > path {
-  fill: pink;
+  fill:$orange;
+}
+
+.mapboxgl-marker > svg > path:hover {
+  fill:$yellow;
+}
+.container-map {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
