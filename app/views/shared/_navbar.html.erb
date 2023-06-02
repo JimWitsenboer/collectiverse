@@ -11,7 +11,7 @@
         <ul class="navbar-nav me-auto align-items-center">
           <%= form_tag search_toys_path, method: :get, class: "navbar-form" do %>
                 <p> <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <%= text_field_tag :search, params[:search], class: "form-control" %> </p>
+                <%= text_field_tag :search, params[:search], class: "form-control-navbar" %> </p>
           <% end %>
           <% if user_signed_in? %>
             <div class="nav-menu">
