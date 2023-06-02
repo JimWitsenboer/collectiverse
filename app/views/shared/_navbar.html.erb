@@ -3,52 +3,39 @@
     <%= link_to "/", class: "navbar-brand left-side-navbar" do %>
       <%= image_tag "logo.png" %><span class="logo-text">COLLECTIVERSE</span>
     <% end %>
-
-<%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button> %>
-<%# jim what is this? %>
-  <div class="right-side-navbar">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto align-items-center">
-
-<%# <form class="d-flex" role="search">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Search</button>
-</form> %>
-<%# is this useless? %>
-
-        <%= form_tag search_toys_path, method: :get, class: "navbar-form" do %>
-              <p> <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              <%= text_field_tag :search, params[:search], class: "form-control" %> </p>
-        <% end %>
-
-          <li class="nav-item">
-            <%= link_to "About", "/pages/about", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Contact", "/pages/contact", class: "nav-link" %>
-          </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="right-side-navbar">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto align-items-center">
+          <%= form_tag search_toys_path, method: :get, class: "navbar-form" do %>
+                <p> <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <%= text_field_tag :search, params[:search], class: "form-control" %> </p>
+          <% end %>
           <% if user_signed_in? %>
-          <li class="nav-item dropdown mr-4">
-            <%= image_tag "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Sales", "/sales", class: "dropdown-item" %>
-              <%= link_to "Purchases", "/purchases", class: "dropdown-item" %>
-              <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item") %>
-            </div>
-          </li>
-          <li class="nav-item ms-2">
-            <%= link_to "New toy", new_toy_path, class: "btn btn-sm btn-outline-secondary py-2 px-4" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-secondary py-2 px-4" %>
-          </li>
-        <% end %>
-      </ul>
-
+            <div class="nav-menu">
+            <% end %>
+              <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "New Toy", new_toy_path, class: "btn button-new-toy" %>
+              </li>
+              <li class="nav-item">
+                <%= image_tag "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg", class: "avatar dropdown-toggle nav-item", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "Sales", "/sales", class: "dropdown-item" %>
+                  <%= link_to "Purchases", "/purchases", class: "dropdown-item" %>
+                  <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+                </div>
+              </li>
+                <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "btn button-login" %>
+              </li>
+              <% end %>
+        </div>
+        </ul>
+      </div>
     </div>
-  </div>
   </div>
 </div>

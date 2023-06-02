@@ -1,11 +1,14 @@
 <div class="full-page">
-  <h1>New order</h1>
-
-  <%= render "form"%>
-
-  <br>
-
-  <div>
-    <%= link_to "Back to orders", toy_path(@toy) %>
+  <div class="d-flex mt-5 mb-5 rounded" id="set-margin">
+    <div class="main-div m-0 p-0" style="background-color: #f0f3f7;" >
+      <div class="banner">
+        <h2>New order</h2>
+        <h5>Please fill in your address to make your order</h5>
+        <hr class="solid">
+      </div>
+      <div class="div-content">
+        <%= render "form"%>
+      </div>
+    </div>
   </div>
 </div>

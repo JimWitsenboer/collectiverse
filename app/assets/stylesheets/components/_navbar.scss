@@ -39,12 +39,90 @@
 .right-side-navbar {
   display: flex;
   align-items: center;
+  margin-right: 15px;
 }
 
 .search-icon{
   position: relative;
   float: right;
-  top: 26px;
+  top: 28px;
   right: 14px;
   color: #CCC;
+}
+
+.nav-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 42px;
+  margin: 0;
+  padding: 0 !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 2s;
+}
+
+.navbar-form{
+  width: 400px;
+  margin-right: 22px;
+}
+
+.form-control{
+  width: 400px;
+  height: 42px;
+}
+
+.nav-menu{
+  width: 162px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-login{
+  width: 96px;
+  height: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 500ms;
+}
+
+.button-login:hover{
+  background-color: rgb(69, 69, 69) !important;
+  color: white !important;
+  transition-duration: 500ms !important;
+}
+
+.button-login:hover {
+  color: white;
+  background-color: black;
+  border-color: black;
+  transition-duration: 1s;
+}
+
+.button-new-toy{
+  width: 104px;
+  height: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 500ms;
+}
+
+.button-new-toy:hover{
+  background-color: rgb(69, 69, 69);
+  color: white;
+  transition-duration: 500ms !important;
+}
+
+.avatar{
+  margin-left: 18px;
+  margin-right: 18px;
 }
