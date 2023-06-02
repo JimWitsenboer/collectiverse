@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     @order.status = "pending"
 
     if @order.save
-      redirect_to toy_path(@toy)
+      redirect_to purchases_path
     else
       render :new, status: :unprocessable_entity
     end
