@@ -14,7 +14,7 @@
 
             <% @orders.each do |order| %>
             <tr>
-                <td><%= cl_image_tag order.toy.photo.key, height: "150px", width: "100px", crop: "fill" %></td>
+                <td><%= cl_image_tag order.toy.photo.key, height: "150px", width: "100px" %></td>
                 <td><%= order.toy.name %></td>
                 <td><%= number_to_currency(order.toy.price) %></td>
                 <td><%= order.toy.user.first_name %></td>
