@@ -20,10 +20,6 @@
             <p class="toy-seller"><i class="fa-solid fa-shop"></i><span><%= toy.user.username %></span></p>
           </div>
         <% end %>
-        <% if (user_signed_in?) && (current_user == toy.user) %>
-          <%= link_to 'Edit', edit_toy_path(toy), class: "btn btn-link" %>
-          <%= button_to "delete", toy, method: :delete, data: { turbo_confirm: "Sure?" }, class: "btn btn-link" %>
-        <% end %>
       </div>
   <% end %>
   </div>
