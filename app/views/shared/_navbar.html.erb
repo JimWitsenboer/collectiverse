@@ -15,31 +15,25 @@
           <% end %>
           <% if user_signed_in? %>
             <div class="nav-menu">
-          <% else %>
-            <div class="nav-menu" style="width: 300px;">
-          <% end %>
-              <li class="nav-item">
-                <%= link_to "About", "/pages/about", class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Contact", "/pages/contact", class: "nav-link" %>
-              </li>
+            <% else %>
+            <div class="nav-menu width: 300px">
+            <% end %>
               <% if user_signed_in? %>
-                <li class="nav-item">
-                  <%= link_to "New Toy", new_toy_path, class: "btn button-new-toy" %>
-                </li>
-                <li class="nav-item">
-                  <%= image_tag "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg", class: "avatar dropdown-toggle nav-item", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <%= link_to "Sales", "/sales", class: "dropdown-item" %>
-                    <%= link_to "Purchases", "/purchases", class: "dropdown-item" %>
-                    <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item") %>
-                  </div>
-                </li>
-              <% else %>
-                <li class="nav-item">
-                  <%= link_to "Login", new_user_session_path, class: "btn button-login" %>
-                </li>
+              <li class="nav-item">
+                <%= link_to "New Toy", new_toy_path, class: "btn button-new-toy" %>
+              </li>
+              <li class="nav-item">
+                <%= image_tag "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg", class: "avatar dropdown-toggle nav-item", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "Sales", "/sales", class: "dropdown-item" %>
+                  <%= link_to "Purchases", "/purchases", class: "dropdown-item" %>
+                  <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+                </div>
+              </li>
+                <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "btn button-login" %>
+              </li>
               <% end %>
         </div>
         </ul>

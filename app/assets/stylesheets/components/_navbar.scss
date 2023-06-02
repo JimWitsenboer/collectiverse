@@ -45,7 +45,7 @@
 .search-icon{
   position: relative;
   float: right;
-  top: 26px;
+  top: 28px;
   right: 14px;
   color: #CCC;
 }
@@ -66,12 +66,17 @@
 }
 
 .navbar-form{
-  width: 300px;
-  margin-right: 14px;
+  width: 400px;
+  margin-right: 22px;
+}
+
+.form-control{
+  width: 400px;
+  height: 42px;
 }
 
 .nav-menu{
-  width: 350px;
+  width: 162px;
   display: flex;
   justify-content: space-between;
 }
@@ -107,4 +112,5 @@
 
 .avatar{
   margin-left: 18px;
+  margin-right: 18px;
 }
