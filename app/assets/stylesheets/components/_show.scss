@@ -1,0 +1,39 @@
+.similar-toy-name{
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: black;
+  width: 250px;
+}
+
+.similar-toy-price{
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+.card-img-similar{
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.similar-toy-container{
+  width: 380px;
+  height: 96px;
+}
+
+.btn-buy{
+  width: 170px;
+  height: 35px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  font-family: 'Geologica', sans-serif;
+  transition-duration: 500ms;
+}
+
+.btn-buy:hover{
+  background-color: rgb(69, 69, 69);
+  color: white;
+  transition-duration: 500ms !important;
+}
