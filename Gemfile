@@ -70,11 +70,15 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  # Gem to create automated tests.
+  gem 'rspec-rails'
 end
+
+group :development, :test do
+  # Gem to create predefined instances of model objects with specific attributes for testing purposes.
+  gem 'factory_bot_rails'
+end
+
 
 gem "devise"
 
@@ -82,3 +86,4 @@ gem "cloudinary"
 gem "geocoder"
 gem "opensearch-ruby"
 gem "searchkick"
+gem 'faker'

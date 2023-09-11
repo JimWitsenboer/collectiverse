@@ -1,7 +1,8 @@
 class Order < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  validates :address, presence: true # :state, :country
+
+  validates :address, presence: true
   belongs_to :toy
   belongs_to :user
 end
