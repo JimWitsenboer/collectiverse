@@ -17,7 +17,7 @@ RSpec.describe "Orders", type: :request do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'shows that user needs to be signed in to access the sales page' do
+    it 'redirects to login page because user is not signed in' do
       sign_out user
       get sales_path
       expect(response).to redirect_to(new_user_session_path)
@@ -29,7 +29,7 @@ RSpec.describe "Orders", type: :request do
       get purchases_path
       expect(response).to have_http_status(:ok)
     end
-    it 'shows that user needs to be signed in to access the sales page' do
+    it 'redirects to login page because user is not signed in' do
       sign_out user
       get purchases_path
       expect(response).to redirect_to(new_user_session_path)
@@ -42,7 +42,7 @@ RSpec.describe "Orders", type: :request do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'shows that user needs to be signed in to access the sales page' do
+    it 'redirects to login page because user is not signed in' do
       sign_out user
       get new_toy_order_path(toy_id: toy.id)
       expect(response).to redirect_to(new_user_session_path)
@@ -54,6 +54,12 @@ RSpec.describe "Orders", type: :request do
       expect {
         post toy_orders_path(toy_id: toy.id), params: { order: order_attributes }
       }.to change(Order, :count).by(1)
+    end
+
+    it 'sets order status to pending upon creation' do
+      post toy_orders_path(toy_id: toy.id), params: { order: order_attributes }
+      expect(response).to redirect_to(purchases_path)
+      expect(Order.last.status).to eq('pending')
     end
 
     it 'redirects to purchases_path' do
